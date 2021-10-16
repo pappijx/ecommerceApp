@@ -37,11 +37,11 @@ export const setCurrentUser = (user) => async (dispatch) => {
 export const register = (userData) => async (dispatch) => {
   const config = {
     headers: {
-      "Content-type": "applicatin/json",
+      "Content-Type": "application/json",
     },
   };
   try {
-    const res = await axios.post(`${getServer}/api/users`, userData, config);
+    const res = await axios.post(`${getServer()}/api/users`, userData, config);
     dispatch({
       type: SUCCESSFUL_REGISTER,
       payload: res.data,
